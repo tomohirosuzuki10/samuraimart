@@ -33,7 +33,7 @@ major_category_names.each do |major_category_name|
     end
   elsif major_category_name == "ディスプレイ"
     display_categories.each do |display_category|
-      Category.create(
+      Categorycd(
         name: display_category,
         description: display_category,
         major_category_name: major_category_name
