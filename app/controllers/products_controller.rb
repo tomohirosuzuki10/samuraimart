@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :favorite]
   def index
     @products = Product.all
   end
@@ -18,6 +18,11 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.save
+    redirect_to product_url @product
+  end
+  
+  def favorite
+    current_user.toggle_like!(@product)
     redirect_to product_url @product
   end
 
