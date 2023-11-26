@@ -6,5 +6,5 @@ class Review < ApplicationRecord
     review.user_id = review_params[:user_id]
     review.product_id = review_params[:product_id]
     save
-  end
+    end
 end
